@@ -1,0 +1,37 @@
+{
+  "name": "vulome-dogfight",
+  "version": "1.0.1",
+  "description": "VULOME — DOGFIGHT (desktop)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build:mac": "electron-builder --mac --publish never",
+    "build:win": "electron-builder --win zip --publish never"
+  },
+  "author": "Team VULOME",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "hu.vulome.dogfight",
+    "productName": "DOGFIGHT",
+    "files": [
+      "main.js",
+      "game/**/*"
+    ],
+    "mac": {
+      "category": "public.app-category.games",
+      "target": ["dmg"],
+      "icon": "build/icon.icns"
+    },
+    "win": {
+      "target": ["zip"],
+      "icon": "build/icon.ico"
+    },
+    "directories": {
+      "output": "dist"
+    }
+  }
+}
